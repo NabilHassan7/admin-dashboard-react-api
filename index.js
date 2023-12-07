@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 // ------ USERS ------
 // LOADING USER DATA
-const users = require('./data/users.json');
+let users = require('./data/users.json');
 
 // GET USERS
 app.get("/users", (req, res) => {
@@ -41,7 +41,7 @@ app.delete("/users/:id", (req, res) => {
 
 // ------ PRODUCTS ------
 // LOADING PRODUCTS DATA
-const products = require('./data/products.json');
+let products = require('./data/products.json');
 
 // GET PRODUCTS
 app.get("/products", (req, res) => {
