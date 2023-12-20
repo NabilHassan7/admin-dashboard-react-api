@@ -75,6 +75,33 @@ app.delete("/products/:id", (req, res) => {
     res.json("Product deleted!");
 });
 
+// ------ ORDERS ------
+// LOADING ORDER DATA
+let orders = require('./data/orders.json');
+
+// GET USERS
+app.get("/orders", (req, res) => {
+    res.json(orders);
+});
+
+// GET USER
+app.get("/orders/:id", (req, res) => {
+    const order = orders.find((order) => order.id === parseInt(req.params.id));
+    res.json(order);
+});
+
+// ADD USER
+app.post("/ordesr", (req, res) => {
+    users.unshift(req.body)
+    res.json(orders);
+});
+  
+// DELETE USER
+app.delete("/orders/:id", (req, res) => {
+    orders = orders.filter((order) => order.id !== parseInt(req.params.id));
+    res.json("Order deleted!");
+});
+
 // RUNNING THE SERVER
 app.listen(port, () => {
     console.log('Server running on port-',port);
