@@ -91,7 +91,7 @@ app.get("/orders/:id", (req, res) => {
 });
 
 // ADD USER
-app.post("/ordesr", (req, res) => {
+app.post("/orders", (req, res) => {
     users.unshift(req.body)
     res.json(orders);
 });
@@ -100,6 +100,15 @@ app.post("/ordesr", (req, res) => {
 app.delete("/orders/:id", (req, res) => {
     orders = orders.filter((order) => order.id !== parseInt(req.params.id));
     res.json("Order deleted!");
+});
+
+// ------ RECENT ORDERS ------
+// LOADING ORDER DATA
+let recentOrders = require('./data/recentOrders.json');
+
+// GET RECENT ORDERS
+app.get("/recentOrders", (req, res) => {
+    res.json(recentOrders);
 });
 
 // RUNNING THE SERVER
