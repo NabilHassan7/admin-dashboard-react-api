@@ -111,6 +111,60 @@ app.get("/recentOrders", (req, res) => {
     res.json(recentOrders);
 });
 
+// ------ TOTAL USERS------
+// LOADING TOTAL USERS DATA
+let totalUsers = require('./data/totalUsers.json');
+
+// GET TOTAL USERS
+app.get("/totalUsers", (req, res) => {
+    res.json(totalUsers);
+});
+
+// ------ TOTAL PRODUCTS------
+// LOADING PRODUCT DATA
+let totalProducts = require('./data/totalProducts.json');
+
+// GET PRODUCT DATA
+app.get("/totalProducts", (req, res) => {
+    res.json(totalProducts);
+});
+
+// ------ TOTAL REVENUE------
+// LOADING REVENUE DATA
+let totalRevenue = require('./data/totalRevenue.json');
+
+// GET REVENUE DATA
+app.get("/totalRevenue", (req, res) => {
+    res.json(totalRevenue);
+});
+
+// ------RATIO------
+// LOADING RATIO DATA
+let ratio = require('./data/ratio.json');
+
+// GET RATIO DATA
+app.get("/ratio", (req, res) => {
+    res.json(ratio);
+});
+
+// ------TOTAL VISITORS------
+// LOADING TOTAL VISITORS
+let totalVisitors = require('./data/totalVisitors.json');
+
+// GET TOTAL VISITORS DATA
+app.get("/totalVisitors", (req, res) => {
+    res.json(totalVisitors);
+});
+
+// ------TOTAL PROFIT------
+// LOADING TOTAL PROFIT
+let totalProfit = require('./data/totalProfit.json');
+
+// GET TOTAL PROFIT DATA
+app.get("/totalProfit", (req, res) => {
+    res.json(totalProfit);
+});
+
 // RUNNING THE SERVER
 app.listen(port, () => {
     console.log('Server running on port-',port);
