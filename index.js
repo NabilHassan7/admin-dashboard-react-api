@@ -165,6 +165,24 @@ app.get("/totalProfit", (req, res) => {
     res.json(totalProfit);
 });
 
+// ------INDIVIDUAL USERS------
+// LOADING INDIVIDUAL USERS
+let userDetails = require('./data/userDetails.json');
+
+// GET SINGLE USER DATA
+app.get("/userDetails", (req, res) => {
+    res.json(userDetails);
+});
+
+// ------INDIVIDUAL PRODUCT------
+// LOADING INDIVIDUAL PRODUCTS
+let productDetails = require('./data/productDetails.json');
+
+// GET SINGLE PRODUCT DATA
+app.get("/productDetails", (req, res) => {
+    res.json(productDetails);
+});
+
 // RUNNING THE SERVER
 app.listen(port, () => {
     console.log('Server running on port-',port);
